@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameMaster : MonoBehaviour
@@ -9,24 +10,85 @@ public class GameMaster : MonoBehaviour
         PlayerOne = 1,
         PlayerTwo = 2
     }
-    public Players PlayerTurn;
+    [HideInInspector]
+    public Players currentPlayerTurn;
+
+    public Camera currentCamera;
+
+    public GameObject playerOne;
+    public GameObject playerTwo;
+
+    public GameObject playerOneStartTurn;
+    public GameObject playerTwoStartTurn;
+
+    private TextMeshProUGUI playerOneTurnText;
+    private TextMeshProUGUI playerTwoTurnText;
+
+    public float fadeTime;
+    private float currentfadeTime;
+    private float alphaValue;
+    private float fadeAwayPerSecond;
+
+
     void Start()
     {
-        PlayerTurn = Players.PlayerOne;
+        currentPlayerTurn = Players.PlayerOne;
+        playerOneTurnText = playerOneStartTurn.GetComponent<TextMeshProUGUI>();
+        playerTwoTurnText = playerTwoStartTurn.GetComponent<TextMeshProUGUI>();
+
+        FocusCameraOnCurrentPlayer(playerOne);
+        ShowTurnStartText();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    public bool RequestToEndTurn(Players applicant)
+    public bool RequestToEndTurn()
     {
-        if(PlayerTurn == applicant){
-            PlayerTurn = applicant == Players.PlayerOne ? Players.PlayerTwo : Players.PlayerOne;
-            return true;
+        //isCurrentPlayerReadyToEndTurn
+        currentPlayerTurn = currentPlayerTurn == Players.PlayerOne ? Players.PlayerTwo : Players.PlayerOne;
+        FocusCameraOnCurrentPlayer(currentPlayerTurn == Players.PlayerOne ? playerOne : playerTwo);
+        ShowTurnStartText();
+        return true;
+    }
+
+    public void ShowTurnStartText()
+    {
+        currentfadeTime = fadeTime;
+        switch (currentPlayerTurn)
+        {
+            case Players.PlayerOne:
+                AnimateTurnStartText(playerOneStartTurn, playerOneTurnText);
+                break;
+            case Players.PlayerTwo:
+                AnimateTurnStartText(playerTwoStartTurn, playerTwoTurnText);
+                break;
         }
-        return false;
+    }
+    private void AnimateTurnStartText(GameObject currentPlayerStartTurn, TMP_Text currentPlayerStartTurnText)
+    {
+        fadeAwayPerSecond = 1 / fadeTime;
+        alphaValue = 1f;
+        currentPlayerStartTurn.SetActive(true);
+        StartCoroutine(FadeOutText(currentPlayerStartTurn, currentPlayerStartTurnText));
+    }
+
+    private IEnumerator FadeOutText(GameObject currentPlayerStartTurn, TMP_Text currentPlayerStartTurnText)
+    {
+        while (currentfadeTime > 0)
+        {
+            alphaValue -= fadeAwayPerSecond * Time.deltaTime;
+            currentPlayerStartTurnText.color = new Color(currentPlayerStartTurnText.color.r, currentPlayerStartTurnText.color.g, currentPlayerStartTurnText.color.b, alphaValue);
+            currentfadeTime -= Time.deltaTime;
+            yield return null;
+        }
+        currentPlayerStartTurn.SetActive(false);
+    }
+
+    private void FocusCameraOnCurrentPlayer(GameObject currentPlayer)
+    {
+        currentCamera.transform.position = new Vector3(currentPlayer.transform.position.x + 5, 40f, -15f);
     }
 }
