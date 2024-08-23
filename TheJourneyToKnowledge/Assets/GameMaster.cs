@@ -15,8 +15,11 @@ public class GameMaster : MonoBehaviour
 
     public Camera currentCamera;
 
-    public GameObject playerOne;
-    public GameObject playerTwo;
+    public GameObject playerOneObject;
+    public GameObject playerTwoObject;
+
+    private PlayerOne playerOne;
+    private PlayerOne playerTwo;
 
     public GameObject playerOneStartTurn;
     public GameObject playerTwoStartTurn;
@@ -29,27 +32,62 @@ public class GameMaster : MonoBehaviour
     private float alphaValue;
     private float fadeAwayPerSecond;
 
-
     void Start()
     {
         currentPlayerTurn = Players.PlayerOne;
         playerOneTurnText = playerOneStartTurn.GetComponent<TextMeshProUGUI>();
         playerTwoTurnText = playerTwoStartTurn.GetComponent<TextMeshProUGUI>();
 
-        FocusCameraOnCurrentPlayer(playerOne);
+        playerOne = playerOneObject.GetComponent<PlayerOne>();
+        playerTwo = playerTwoObject.GetComponent<PlayerOne>();
+
+        FocusCameraOnCurrentPlayer(playerOneObject);
         ShowTurnStartText();
+        playerOne.StartTurn();
     }
 
     void Update()
     {
+        if(currentPlayerTurn == Players.PlayerOne)
+        {
+            FocusCameraOnCurrentPlayer(playerOneObject);
+        }
+        else
+        {
+            FocusCameraOnCurrentPlayer(playerTwoObject);
+        }
         
     }
 
     public bool RequestToEndTurn()
     {
-        //isCurrentPlayerReadyToEndTurn
-        currentPlayerTurn = currentPlayerTurn == Players.PlayerOne ? Players.PlayerTwo : Players.PlayerOne;
-        FocusCameraOnCurrentPlayer(currentPlayerTurn == Players.PlayerOne ? playerOne : playerTwo);
+        if(currentPlayerTurn == Players.PlayerOne && !playerOne.isReadyToEndTurn)
+        {
+            return false;
+        }
+        if(currentPlayerTurn == Players.PlayerTwo && !playerTwo.isReadyToEndTurn)
+        {
+            return false;
+        }
+
+
+        //currentPlayerTurn = currentPlayerTurn == Players.PlayerOne ? Players.PlayerTwo : Players.PlayerOne;
+        if(currentPlayerTurn == Players.PlayerOne)
+        {
+            currentPlayerTurn = Players.PlayerTwo;
+            playerOne.isMyTurn = false;
+            playerTwo.isMyTurn = true;
+            playerTwo.StartTurn();
+        }
+        else
+        {
+            currentPlayerTurn = Players.PlayerOne;
+            playerOne.isMyTurn = true;
+            playerTwo.isMyTurn = false;
+            playerOne.StartTurn();
+        }
+
+        FocusCameraOnCurrentPlayer(currentPlayerTurn == Players.PlayerOne ? playerOneObject : playerTwoObject);
         ShowTurnStartText();
         return true;
     }
@@ -89,6 +127,6 @@ public class GameMaster : MonoBehaviour
 
     private void FocusCameraOnCurrentPlayer(GameObject currentPlayer)
     {
-        currentCamera.transform.position = new Vector3(currentPlayer.transform.position.x + 5, 40f, -15f);
+        currentCamera.transform.position = new Vector3(currentPlayer.transform.position.x + 5, currentPlayer.transform.position.y + 20f, currentPlayer.transform.position.z - 15f);
     }
 }

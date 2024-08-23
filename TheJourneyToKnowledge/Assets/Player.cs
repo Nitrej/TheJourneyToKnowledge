@@ -6,18 +6,70 @@ public class PlayerOne : MonoBehaviour
 {
     public GameMaster.Players player;
 
-    private bool isMyTurn;
-    private bool isReadyToEndTurn;
+    public bool isMyTurn;
+    public bool isReadyToEndTurn;
     private GameMaster gameMaster;
+    public Path path;
+    public Dice dice;
+    private int currentWaypoint;
     void Start()
     {
         gameMaster = FindFirstObjectByType<GameMaster>();
         isMyTurn = gameMaster.currentPlayerTurn == player;
+        transform.position = path.waypoints[0].transform.position;
     }
 
     void Update()
     {
-        
+        //if (isMyTurn)
+        //{
+        //    StartTurn();
+        //}
     }
 
+    public void StartTurn()
+    {
+        isReadyToEndTurn = false;
+        
+        int movement = dice.RollDice();
+        MoveForward(movement);
+        switch (path.waypoints[currentWaypoint].type)
+        {
+            case WaypointType.Normal:
+                break;
+            case WaypointType.Connector:
+                break;
+        }
+        
+        isReadyToEndTurn = true;
+
+    }
+
+    private void MoveForward(int steps)
+    {
+        currentWaypoint += steps;
+        if (currentWaypoint < path.waypoints.Length)
+        {
+            Vector3 targetPosition = path.GetWaypointPosition(currentWaypoint);
+            StartCoroutine(MoveToPosition(targetPosition, (float)steps));
+        }
+        else 
+        { 
+            currentWaypoint = path.waypoints.Length -1 ;
+        }
+    }
+
+    private IEnumerator MoveToPosition(Vector3 targetPosition, float duration)
+    {
+        Vector3 startPosition = transform.position;
+        float elapsed = 0;
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed/duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+    }
 }
