@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerOne : MonoBehaviour
@@ -13,8 +14,26 @@ public class PlayerOne : MonoBehaviour
     private int currentWaypoint;
 
     private int movementPoints;
+    public bool rolledDice;
+
+    public int lifeSatisfactionPoints;
+    public int knowledgePoints;
+    public int luckyNumber;
+
+    public TextMeshProUGUI lifeSatisfactionPointsText;
+    public TextMeshProUGUI knowledgePointsText;
+    public TextMeshProUGUI luckyNumberText;
     void Start()
     {
+        lifeSatisfactionPoints = 0;
+        lifeSatisfactionPointsText.text = "0";
+
+        knowledgePoints = 0;
+        knowledgePointsText.text = "0";
+
+        luckyNumber = dice.RollDice();
+        luckyNumberText.text = $"{luckyNumber}";
+
         movementPoints = 0;
         isMyTurn = GameMaster.instance.currentPlayerTurn == player;
         transform.position = path.waypoints[0].transform.position;
@@ -22,14 +41,14 @@ public class PlayerOne : MonoBehaviour
 
     void Update()
     {
-
+        lifeSatisfactionPointsText.text = $"{lifeSatisfactionPoints}";
+        knowledgePointsText.text = $"{knowledgePoints}";
     }
 
     public IEnumerator StartTurn()
     {
         Debug.Log("start");
-        isReadyToEndTurn = false;
-        
+
         movementPoints = dice.RollDice();
         Debug.Log($"roled {movementPoints}");
 
@@ -39,9 +58,9 @@ public class PlayerOne : MonoBehaviour
         yield return StartCoroutine(HandleMovement());
         Debug.Log("moved");
 
+        rolledDice = true;
         isReadyToEndTurn = true;
         
-        dice.ReturnToIdle();
     }
     public IEnumerator HandleMovement()
     {

@@ -11,10 +11,13 @@ public class GameMaster : MonoBehaviour
         PlayerOne = 1,
         PlayerTwo = 2
     }
-    [HideInInspector]
+    
     public Players currentPlayerTurn;
 
     public Camera currentCamera;
+
+    public Animator PlayerOneDiceAnimator;
+    public Animator PlayerTwoDiceAnimator;
 
     public GameObject playerOneObject;
     public GameObject playerTwoObject;
@@ -51,7 +54,7 @@ public class GameMaster : MonoBehaviour
 
         FocusCameraOnCurrentPlayer(playerOneObject);
         ShowTurnStartText();
-        StartCoroutine(playerOne.StartTurn());
+        //StartCoroutine(playerOne.StartTurn());
     }
 
     void Update()
@@ -83,16 +86,30 @@ public class GameMaster : MonoBehaviour
             currentPlayerTurn = Players.PlayerTwo;
             playerOne.isMyTurn = false;
             playerTwo.isMyTurn = true;
+            playerOne.rolledDice = true;
+            playerTwo.rolledDice = false;
+            playerOne.isReadyToEndTurn = false;
+            playerTwo.isReadyToEndTurn = false;
+            PlayerOneDiceAnimator.ResetTrigger("Idle");
+            PlayerOneDiceAnimator.SetTrigger("Idle");
+            //playerOne.dice.ReturnToIdle();
             Debug.Log("ready two");
-            StartCoroutine(playerTwo.StartTurn());
+            //StartCoroutine(playerTwo.StartTurn());
         }
         else
         {
             currentPlayerTurn = Players.PlayerOne;
             playerOne.isMyTurn = true;
             playerTwo.isMyTurn = false;
+            playerOne.rolledDice = false;
+            playerTwo.rolledDice = true;
+            playerOne.isReadyToEndTurn = false;
+            playerTwo.isReadyToEndTurn = false;
+            PlayerTwoDiceAnimator.ResetTrigger("Idle");
+            PlayerTwoDiceAnimator.SetTrigger("Idle");
+            //playerTwo.dice.ReturnToIdle();
             Debug.Log("ready one");
-            StartCoroutine(playerOne.StartTurn());
+            //StartCoroutine(playerOne.StartTurn());
         }
 
         FocusCameraOnCurrentPlayer(currentPlayerTurn == Players.PlayerOne ? playerOneObject : playerTwoObject);

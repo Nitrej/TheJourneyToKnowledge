@@ -6,22 +6,16 @@ public class EndTurnButton : MonoBehaviour
 {
     public MeshRenderer PlayerOneDice;
     public MeshRenderer PlayerTwoDice;
-
-    void Start()
-    {
-
-    }
-
     
-    void Update()
-    {
-        
-    }
+    public GameObject DiceAlert;
+    public GameObject DiceAlertBorder;
 
     public void ButtonClicked()
     {
         if (!GameMaster.instance.RequestToEndTurn())
         {
+            DiceAlert.SetActive(true);
+            DiceAlertBorder.SetActive(true);
             return;
         }
         else 
