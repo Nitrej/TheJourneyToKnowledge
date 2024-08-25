@@ -51,7 +51,7 @@ public class GameMaster : MonoBehaviour
 
         FocusCameraOnCurrentPlayer(playerOneObject);
         ShowTurnStartText();
-        playerOne.StartTurn();
+        StartCoroutine(playerOne.StartTurn());
     }
 
     void Update()
@@ -78,26 +78,28 @@ public class GameMaster : MonoBehaviour
             return false;
         }
 
-
-        //currentPlayerTurn = currentPlayerTurn == Players.PlayerOne ? Players.PlayerTwo : Players.PlayerOne;
-        if(currentPlayerTurn == Players.PlayerOne)
+        if (currentPlayerTurn == Players.PlayerOne)
         {
             currentPlayerTurn = Players.PlayerTwo;
             playerOne.isMyTurn = false;
             playerTwo.isMyTurn = true;
-            playerTwo.StartTurn();
+            Debug.Log("ready two");
+            StartCoroutine(playerTwo.StartTurn());
         }
         else
         {
             currentPlayerTurn = Players.PlayerOne;
             playerOne.isMyTurn = true;
             playerTwo.isMyTurn = false;
-            playerOne.StartTurn();
+            Debug.Log("ready one");
+            StartCoroutine(playerOne.StartTurn());
         }
 
         FocusCameraOnCurrentPlayer(currentPlayerTurn == Players.PlayerOne ? playerOneObject : playerTwoObject);
         ShowTurnStartText();
+
         return true;
+        
     }
 
     public void ShowTurnStartText()
@@ -131,6 +133,9 @@ public class GameMaster : MonoBehaviour
             yield return null;
         }
         currentPlayerStartTurn.SetActive(false);
+
+        yield return new WaitForSeconds(fadeTime);
+
     }
 
     private void FocusCameraOnCurrentPlayer(GameObject currentPlayer)

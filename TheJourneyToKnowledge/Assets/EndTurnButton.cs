@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EndTurnButton : MonoBehaviour
 {
+    public MeshRenderer PlayerOneDice;
+    public MeshRenderer PlayerTwoDice;
+
     void Start()
     {
+
     }
 
     
@@ -18,7 +22,20 @@ public class EndTurnButton : MonoBehaviour
     {
         if (!GameMaster.instance.RequestToEndTurn())
         {
-
+            return;
+        }
+        else 
+        {
+            if (PlayerOneDice.enabled)
+            {
+                PlayerOneDice.enabled = false;
+                PlayerTwoDice.enabled = true;
+            }
+            else
+            {
+                PlayerOneDice.enabled = true;
+                PlayerTwoDice.enabled = false;
+            }
         }
     }
 }

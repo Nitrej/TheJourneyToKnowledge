@@ -11,26 +11,42 @@ public class PlayerOne : MonoBehaviour
     public Path path;
     public Dice dice;
     private int currentWaypoint;
+
+    private int movementPoints;
     void Start()
     {
+        movementPoints = 0;
         isMyTurn = GameMaster.instance.currentPlayerTurn == player;
         transform.position = path.waypoints[0].transform.position;
     }
 
     void Update()
     {
-        //if (isMyTurn)
-        //{
-        //    StartTurn();
-        //}
+
     }
 
-    public void StartTurn()
+    public IEnumerator StartTurn()
     {
+        Debug.Log("start");
         isReadyToEndTurn = false;
         
-        int movement = dice.RollDice();
-        MoveForward(movement);
+        movementPoints = dice.RollDice();
+        Debug.Log($"roled {movementPoints}");
+
+        yield return StartCoroutine(dice.WaitForDiceToStop(2, movementPoints));
+        Debug.Log("rolled");
+
+        yield return StartCoroutine(HandleMovement());
+        Debug.Log("moved");
+
+        isReadyToEndTurn = true;
+        
+        dice.ReturnToIdle();
+    }
+    public IEnumerator HandleMovement()
+    {
+        yield return StartCoroutine(MoveForward(movementPoints));
+
         switch (path.waypoints[currentWaypoint].type)
         {
             case WaypointType.Normal:
@@ -38,18 +54,15 @@ public class PlayerOne : MonoBehaviour
             case WaypointType.Connector:
                 break;
         }
-        
-        isReadyToEndTurn = true;
-
     }
 
-    private void MoveForward(int steps)
+    private IEnumerator MoveForward(int steps)
     {
         currentWaypoint += steps;
         if (currentWaypoint < path.waypoints.Length)
         {
             Vector3 targetPosition = path.GetWaypointPosition(currentWaypoint);
-            StartCoroutine(MoveToPosition(targetPosition, (float)steps));
+            yield return StartCoroutine(MoveToPosition(targetPosition, (float)steps));
         }
         else 
         { 

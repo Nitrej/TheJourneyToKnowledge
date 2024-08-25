@@ -97,3 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 2
+  isMyTurn: 0
+  isReadyToEndTurn: 0
+  path: {fileID: 0}
+  dice: {fileID: 7473920592047753630, guid: 914d00e045165094d8c09bf4968c8203, type: 3}
