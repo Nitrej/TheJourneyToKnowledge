@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public LevelLoader LevelLoader;
     public void OnPlayerVsPlayerButtonClicked()
     {
-        SceneManager.LoadScene(1);
+        LevelLoader.LoadLevel(1);
     }
     public void OnPlayerVsAiButtonClicked()
     {
-        SceneManager.LoadScene(1);
+        LevelLoader.LoadLevel(1);
     }
     public void OnOptionsButtonClicked()
     {
