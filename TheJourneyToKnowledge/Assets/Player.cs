@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class PlayerOne : MonoBehaviour
 {
@@ -13,7 +15,8 @@ public class PlayerOne : MonoBehaviour
     public Dice dice;
     private int currentWaypoint;
 
-    private int movementPoints;
+    public int movementPoints;
+
     public bool rolledDice;
 
     public int lifeSatisfactionPoints;
@@ -23,6 +26,14 @@ public class PlayerOne : MonoBehaviour
     public TextMeshProUGUI lifeSatisfactionPointsText;
     public TextMeshProUGUI knowledgePointsText;
     public TextMeshProUGUI luckyNumberText;
+
+    public GameObject ChoosePanel;
+    public GameObject ChoosePanelBorder;
+    public UnityEngine.UI.Button LeftButton;
+    public UnityEngine.UI.Button RightButton;
+    public TextMeshProUGUI LeftChoise;
+    public TextMeshProUGUI RightChoise;
+
     void Start()
     {
         lifeSatisfactionPoints = 0;
@@ -47,19 +58,19 @@ public class PlayerOne : MonoBehaviour
 
     public IEnumerator StartTurn()
     {
-        Debug.Log("start");
+        //Debug.Log("start");
 
         movementPoints = dice.RollDice();
-        Debug.Log($"roled {movementPoints}");
+        //Debug.Log($"roled {movementPoints}");
 
         yield return StartCoroutine(dice.WaitForDiceToStop(2, movementPoints));
-        Debug.Log("rolled");
+        //Debug.Log("rolled");
 
         yield return StartCoroutine(HandleMovement());
-        Debug.Log("moved");
+        //Debug.Log("moved");
 
         rolledDice = true;
-        isReadyToEndTurn = true;
+        
         
     }
     public IEnumerator HandleMovement()
@@ -69,14 +80,66 @@ public class PlayerOne : MonoBehaviour
         switch (path.waypoints[currentWaypoint].type)
         {
             case WaypointType.Normal:
+
+                isReadyToEndTurn = true;
                 break;
             case WaypointType.Connector:
+
+                if(path.waypoints[currentWaypoint].paths.Length == 1)
+                {
+                    path = path.waypoints[currentWaypoint].paths[0];
+                    currentWaypoint = 0;
+                    yield return StartCoroutine(HandleMovement());
+                    isReadyToEndTurn = true;
+                }
+                else if(path.waypoints[currentWaypoint].paths.Length == 2)
+                {
+                    yield return StartCoroutine(ChoosePath());
+                }
+
                 break;
         }
+    }
+    private IEnumerator ChoosePath()
+    {
+        LeftChoise.text = path.waypoints[currentWaypoint].leftChoise;
+        RightChoise.text = path.waypoints[currentWaypoint].rightChoise;
+        ChoosePanelBorder.SetActive(true);
+        ChoosePanel.SetActive(true);
+
+        var waitForButton = new WaitForUIButtons(LeftButton, RightButton);
+        yield return waitForButton.Reset();
+        if (waitForButton.PressedButton == LeftButton)
+        {
+            path = path.waypoints[currentWaypoint].paths[0];
+            currentWaypoint = 0;
+            yield return StartCoroutine(HandleMovement());
+            isReadyToEndTurn = true;
+        }
+        else
+        {
+            path = path.waypoints[currentWaypoint].paths[1];
+            currentWaypoint = 0;
+            yield return StartCoroutine(HandleMovement());
+            isReadyToEndTurn = true;
+        }
+
     }
 
     private IEnumerator MoveForward(int steps)
     {
+        //Debug.LogWarning($"steps {steps}; {currentWaypoint}");
+        if (steps <= 0) 
+        { 
+            yield return null;
+        }
+        if (steps >= path.waypoints.Length - 1 - currentWaypoint)
+        {
+            steps = path.waypoints.Length - 1 - currentWaypoint;
+            movementPoints -= steps;
+            //Debug.LogWarning($"odjêto {steps}");
+
+        }
         currentWaypoint += steps;
         if (currentWaypoint < path.waypoints.Length)
         {

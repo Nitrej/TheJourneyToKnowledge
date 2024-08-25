@@ -5,13 +5,11 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour
 {
     public WaypointType type;
-    public WaypointForPlayer player;
-    //public Transform transform;
 
-    //private void Start()
-    //{
-    //    transform = GetComponent<Transform>();
-    //}
+    public Path[] paths;
+
+    public string leftChoise;
+    public string rightChoise;
 }
 
 
@@ -20,8 +18,4 @@ public enum WaypointType
     Normal,
     Connector,
 }
-public enum WaypointForPlayer
-{
-    One,
-    Two,
-}
+
