@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class EndTurnButton : MonoBehaviour
 {
-    private GameMaster gameMaster;
     void Start()
     {
-        gameMaster = FindFirstObjectByType<GameMaster>();
     }
 
     
@@ -18,7 +16,7 @@ public class EndTurnButton : MonoBehaviour
 
     public void ButtonClicked()
     {
-        if (!gameMaster.RequestToEndTurn())
+        if (!GameMaster.instance.RequestToEndTurn())
         {
 
         }

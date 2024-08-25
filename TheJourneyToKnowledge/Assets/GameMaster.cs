@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
+    public static GameMaster instance;
     public enum Players
     {
         PlayerOne = 1,
@@ -32,6 +33,13 @@ public class GameMaster : MonoBehaviour
     private float alphaValue;
     private float fadeAwayPerSecond;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
         currentPlayerTurn = Players.PlayerOne;

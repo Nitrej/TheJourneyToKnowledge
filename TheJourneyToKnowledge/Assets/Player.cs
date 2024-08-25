@@ -8,14 +8,12 @@ public class PlayerOne : MonoBehaviour
 
     public bool isMyTurn;
     public bool isReadyToEndTurn;
-    private GameMaster gameMaster;
     public Path path;
     public Dice dice;
     private int currentWaypoint;
     void Start()
     {
-        gameMaster = FindFirstObjectByType<GameMaster>();
-        isMyTurn = gameMaster.currentPlayerTurn == player;
+        isMyTurn = GameMaster.instance.currentPlayerTurn == player;
         transform.position = path.waypoints[0].transform.position;
     }
 
