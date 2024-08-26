@@ -35,8 +35,19 @@ public class PlayerOne : MonoBehaviour
     public GameObject ChoosePanelBorder;
     public UnityEngine.UI.Button LeftChooseButton;
     public UnityEngine.UI.Button RightChooseButton;
+    public TextMeshProUGUI Prompt;
     public TextMeshProUGUI LeftChoise;
     public TextMeshProUGUI RightChoise;
+
+    //ChoisePanel3
+    public GameObject Choose3Panel;
+    public UnityEngine.UI.Button LeftChoose3Button;
+    public UnityEngine.UI.Button MiddleChoose3Button;
+    public UnityEngine.UI.Button RightChoose3Button;
+    public TextMeshProUGUI Prompt3;
+    public TextMeshProUGUI LeftChoise3;
+    public TextMeshProUGUI MiddleChoise3;
+    public TextMeshProUGUI RightChoise3;
 
     //NegativeAndChancePanel
     public GameObject ModifyPanel;
@@ -133,6 +144,14 @@ public class PlayerOne : MonoBehaviour
                         isReadyToEndTurn = false;
                         yield return StartCoroutine(ChoosePath());
                         
+                    }
+                }else if (path.waypoints[currentWaypoint].paths.Length == 3)
+                {
+                    if (movementPoints > 0 && !isReadyToEndTurn)
+                    {
+                        isReadyToEndTurn = false;
+                        yield return StartCoroutine(ChoosePath3());
+
                     }
                 }
                 break;
@@ -299,6 +318,7 @@ public class PlayerOne : MonoBehaviour
     {
         LeftChoise.text = path.waypoints[currentWaypoint].leftChoise;
         RightChoise.text = path.waypoints[currentWaypoint].rightChoise;
+        Prompt.text = path.waypoints[currentWaypoint].prompt != null ? path.waypoints[currentWaypoint].prompt : "Wybierz Œcierzkê";
         ChoosePanelBorder.SetActive(true);
         ChoosePanel.SetActive(true);
 
@@ -317,6 +337,39 @@ public class PlayerOne : MonoBehaviour
             currentWaypoint = 0;
             yield return StartCoroutine(HandleMovement());
             //isReadyToEndTurn = true;
+        }
+
+    }
+
+    private IEnumerator ChoosePath3()
+    {
+        LeftChoise3.text = path.waypoints[currentWaypoint].leftChoise;
+        MiddleChoise3.text = path.waypoints[currentWaypoint].middleChoise;
+        RightChoise3.text = path.waypoints[currentWaypoint].rightChoise;
+        Prompt.text = path.waypoints[currentWaypoint].prompt != null ? path.waypoints[currentWaypoint].prompt : "Wybierz Œcierzkê";
+        ChoosePanelBorder.SetActive(true);
+        Choose3Panel.SetActive(true);
+
+        var waitForButton = new WaitForUIButtons(LeftChoose3Button, MiddleChoose3Button ,RightChoose3Button);
+        yield return waitForButton.Reset();
+        if (waitForButton.PressedButton == LeftChoose3Button)
+        {
+            path = path.waypoints[currentWaypoint].paths[0];
+            currentWaypoint = 0;
+            yield return StartCoroutine(HandleMovement());
+            //isReadyToEndTurn = true;
+        }
+        else if(waitForButton.PressedButton == MiddleChoose3Button)
+        {
+            path = path.waypoints[currentWaypoint].paths[1];
+            currentWaypoint = 0;
+            yield return StartCoroutine(HandleMovement());
+            //isReadyToEndTurn = true;
+        }else if(waitForButton.PressedButton == RightChoose3Button)
+        {
+            path = path.waypoints[currentWaypoint].paths[2];
+            currentWaypoint = 0;
+            yield return StartCoroutine(HandleMovement());
         }
 
     }

@@ -10,6 +10,8 @@ public class Waypoint : MonoBehaviour
 
     public string leftChoise;
     public string rightChoise;
+    public string prompt;
+    public string middleChoise;
 }
 
 
