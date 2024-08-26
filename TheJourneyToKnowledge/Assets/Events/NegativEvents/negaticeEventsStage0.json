@@ -1,0 +1,38 @@
+{
+  "events":
+    [{
+    "text": "Nikt nie chce się z tobą bawić.",
+    "type": 1,
+    "value": -3
+    },
+    {
+    "text": "Masz duży problem z rysowaniem szlaczków.",
+    "type": 0,
+    "value": -2
+    },
+    {
+    "text": "Mówienie wciąż sprawia ci problemy.",
+    "type": 0,
+    "value": -2
+    },
+    {
+    "text": "Przewrócono cię podczas gry w berka.",
+    "type": 1,
+    "value": -1
+    },
+    {
+    "text": "Twoja ulubiona zabawka zepsuła się.",
+    "type": 1,
+    "value": -2
+    },
+    {
+    "text": "Nowe doświadczenia cię przytłoczyły.",
+    "type": 0,
+    "value": -1
+    },
+    {
+    "text": "Zaczęłaś/Zacząłeś płakach przy wszystkich.",
+    "type": 1,
+    "value": -5
+    }]
+}

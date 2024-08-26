@@ -8,7 +8,7 @@ public class Dice : MonoBehaviour
 
     public int RollDice()
     {
-        int randomNumber = Random.Range(1, 6);
+        int randomNumber = Random.Range(1, 7);
 
         return randomNumber;
     }

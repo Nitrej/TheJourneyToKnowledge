@@ -17,5 +17,10 @@ public enum WaypointType
 {
     Normal,
     Connector,
+    Negative,
+    Risk,
+    Chance,
+    Matura,
+    Victory,
 }
 

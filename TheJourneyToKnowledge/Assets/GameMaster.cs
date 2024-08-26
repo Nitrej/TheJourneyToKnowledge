@@ -28,6 +28,11 @@ public class GameMaster : MonoBehaviour
     public GameObject playerOneStartTurn;
     public GameObject playerTwoStartTurn;
 
+     //index = stage
+    public TextAsset[] negativeJsons;
+    public TextAsset[] positiveJsons;
+    public TextAsset[] riskJsons;
+
     private TextMeshProUGUI playerOneTurnText;
     private TextMeshProUGUI playerTwoTurnText;
 
@@ -93,7 +98,7 @@ public class GameMaster : MonoBehaviour
             PlayerOneDiceAnimator.ResetTrigger("Idle");
             PlayerOneDiceAnimator.SetTrigger("Idle");
             //playerOne.dice.ReturnToIdle();
-            Debug.Log("ready two");
+            //Debug.Log("ready two");
             //StartCoroutine(playerTwo.StartTurn());
         }
         else
@@ -108,7 +113,7 @@ public class GameMaster : MonoBehaviour
             PlayerTwoDiceAnimator.ResetTrigger("Idle");
             PlayerTwoDiceAnimator.SetTrigger("Idle");
             //playerTwo.dice.ReturnToIdle();
-            Debug.Log("ready one");
+            //Debug.Log("ready one");
             //StartCoroutine(playerOne.StartTurn());
         }
 
@@ -158,5 +163,36 @@ public class GameMaster : MonoBehaviour
     private void FocusCameraOnCurrentPlayer(GameObject currentPlayer)
     {
         currentCamera.transform.position = new Vector3(currentPlayer.transform.position.x + 5, currentPlayer.transform.position.y + 20f, currentPlayer.transform.position.z - 15f);
+    }
+    public NegativeEvent GetNegativeEvent(int stage)
+    {
+        NegativeEvents negativeEvents = JsonUtility.FromJson<NegativeEvents>(negativeJsons[stage].text);
+
+        return negativeEvents.events[Random.Range(0,negativeEvents.events.Count)];
+    }
+
+    public NegativeEvent GetChanceEvent(int stage)
+    {
+        int fate = Random.Range(1,11);
+
+        if(fate == 10)
+        {
+            GetNegativeEvent(stage);
+        }
+        else
+        {
+            NegativeEvents negativeEvents = JsonUtility.FromJson<NegativeEvents>(positiveJsons[stage].text);
+
+            return negativeEvents.events[Random.Range(0, negativeEvents.events.Count)];
+        }
+
+        return null;
+    }
+
+    public RiskEvent GetRiskEvent(int stage)
+    {
+        RiskEvents riskEvents = JsonUtility.FromJson<RiskEvents>(riskJsons[stage].text);
+
+        return riskEvents.events[Random.Range(0, riskEvents.events.Count)];
     }
 }

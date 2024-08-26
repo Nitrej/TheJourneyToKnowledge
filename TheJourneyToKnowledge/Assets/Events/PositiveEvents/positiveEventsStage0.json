@@ -1,0 +1,38 @@
+{
+  "events":
+    [{
+    "text": "Zaproszono cię do wspólnej zabawy.",
+    "type": 1,
+    "value": 4
+    },
+    {
+    "text": "Masz talent do rysowania.",
+    "type": 0,
+    "value": 2
+    },
+    {
+    "text": "Recytowanie prostych rymowanek nie jest ci straszne.",
+    "type": 0,
+    "value": 2
+    },
+    {
+    "text": "Wygrywasz zabawę w chowanego.",
+    "type": 1,
+    "value": 2
+    },
+    {
+    "text": "Otrzymujesz nawą zabawkę.",
+    "type": 1,
+    "value": 4
+    },
+    {
+    "text": "Odwiedzasz lokalne zoo z rodzicami.",
+    "type": 0,
+    "value": 6
+    },
+    {
+    "text": "Udaje ci się pogłaskać kota sąsiadów.",
+    "type": 1,
+    "value": 2
+    }]
+}

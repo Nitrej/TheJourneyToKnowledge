@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "text": "Czy koty potrafią latać?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 2
+    },
+    {
+      "text": "Czy trawa jest zielona?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 2
+    },
+    {
+      "text": "Czy banany rosną na drzewach?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 2
+    },
+    {
+      "text": "Czy ryby mogą żyć bez wody?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 2
+    },
+    {
+      "text": "Co jest większe?",
+      "ansL": "Słońce",
+      "ansR": "Piłka",
+      "correct": 0,
+      "value": 2
+    },
+    {
+      "text": "Co jest szybsze?",
+      "ansL": "Samochód",
+      "ansR": "Rower",
+      "correct": 0,
+      "value": 2
+    },
+    {
+      "text": "Co jest słodsze?",
+      "ansL": "Cukierek",
+      "ansR": "Cytryna",
+      "correct": 0,
+      "value": 2
+    },
+    {
+      "text": "Co żyje w wodzie?",
+      "ansL": "Ryba",
+      "ansR": "Pies",
+      "correct": 0,
+      "value": 2
+    }
+  ]
+}
