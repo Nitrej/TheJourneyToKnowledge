@@ -73,7 +73,10 @@ public class PlayerOne : MonoBehaviour
     public GameObject AlertPanel;
     public GameObject AlertPanelBorder;
 
-    
+    public AudioSource luckyDing;
+    public AudioSource rollDice;
+
+
 
     void Start()
     {
@@ -107,13 +110,14 @@ public class PlayerOne : MonoBehaviour
 
             movementPoints = dice.RollDice();
             //Debug.Log($"roled {movementPoints}");
-
+            rollDice.Play();
             yield return StartCoroutine(dice.WaitForDiceToStop(2, movementPoints));
             //Debug.Log("rolled");
 
             if (movementPoints == luckyNumber)
             {
                 luckyNumberParticles.Play();
+                luckyDing.Play();
                 lifeSatisfactionPoints += 2;
             }
 

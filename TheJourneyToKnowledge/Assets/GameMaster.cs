@@ -52,6 +52,9 @@ public class GameMaster : MonoBehaviour
 
     public TextMeshProUGUI currentStage;
 
+    public AudioSource audio1;
+    public AudioSource audio2;
+
     public float fadeTime;
     private float currentfadeTime;
     private float alphaValue;
@@ -79,6 +82,8 @@ public class GameMaster : MonoBehaviour
         ShowTurnStartText();
         //StartCoroutine(playerOne.StartTurn());
 
+        StartCoroutine(PlayMusic(audio1));
+
         Resources.UnloadUnusedAssets();
     }
 
@@ -101,6 +106,18 @@ public class GameMaster : MonoBehaviour
         {
             StartCoroutine(EscapePressed());
         }
+
+        if (playerOne.playerAtTheEnd)
+        {
+            playerOne.rolledDice = true;
+            playerOne.isReadyToEndTurn = true;
+        }
+        if (playerTwo.playerAtTheEnd) 
+        {
+            playerTwo.rolledDice = true;
+            playerTwo.isReadyToEndTurn = true;
+        }
+
 
         if(playerOne.playerAtTheEnd && playerTwo.playerAtTheEnd)
         {
@@ -142,7 +159,12 @@ public class GameMaster : MonoBehaviour
             firstPlayerToEnd = Players.PlayerTwo;
         }
     }
-
+    private IEnumerator PlayMusic(AudioSource audioSource)
+    {
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        yield return StartCoroutine(PlayMusic(audioSource == audio1 ? audio2 : audio1));
+    }
     public bool RequestToEndTurn()
     {
         if(currentPlayerTurn == Players.PlayerOne && !playerOne.isReadyToEndTurn)
@@ -165,8 +187,12 @@ public class GameMaster : MonoBehaviour
             playerTwo.isReadyToEndTurn = false;
             playerOne.AlertPanel.SetActive(false);
             playerOne.AlertPanelBorder.SetActive(false);
-            playerTwo.AlertPanel.SetActive(false);
-            playerTwo.AlertPanelBorder.SetActive(false);
+            if (playerTwo.playerAtTheEnd)
+            {
+                Debug.Log("bbb");
+                playerTwo.AlertPanel.SetActive(true);
+                playerTwo.AlertPanelBorder.SetActive(true);
+            }
             PlayerOneDiceAnimator.ResetTrigger("Idle");
             PlayerOneDiceAnimator.SetTrigger("Idle");
             //playerOne.dice.ReturnToIdle();
@@ -182,10 +208,12 @@ public class GameMaster : MonoBehaviour
             playerTwo.rolledDice = true;
             playerOne.isReadyToEndTurn = false;
             playerTwo.isReadyToEndTurn = false;
-            playerOne.AlertPanel.SetActive(false);
-            playerOne.AlertPanelBorder.SetActive(false);
-            playerTwo.AlertPanel.SetActive(false);
-            playerTwo.AlertPanelBorder.SetActive(false);
+            if (playerOne.playerAtTheEnd)
+            {
+                Debug.Log("aaa");
+                playerOne.AlertPanel.SetActive(true);
+                playerOne.AlertPanelBorder.SetActive(true);
+            }
             PlayerTwoDiceAnimator.ResetTrigger("Idle");
             PlayerTwoDiceAnimator.SetTrigger("Idle");
             //playerTwo.dice.ReturnToIdle();
