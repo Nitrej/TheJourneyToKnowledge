@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -25,6 +24,8 @@ public class PlayerOne : MonoBehaviour
     public int knowledgePoints;
     public int luckyNumber;
     private float currCountdownValue;
+    public bool playerAtTheEnd;
+
 
     public TextMeshProUGUI lifeSatisfactionPointsText;
     public TextMeshProUGUI knowledgePointsText;
@@ -69,6 +70,11 @@ public class PlayerOne : MonoBehaviour
 
     public ParticleSystem luckyNumberParticles;
 
+    public GameObject AlertPanel;
+    public GameObject AlertPanelBorder;
+
+    
+
     void Start()
     {
         lifeSatisfactionPoints = 0;
@@ -76,6 +82,8 @@ public class PlayerOne : MonoBehaviour
 
         knowledgePoints = 0;
         knowledgePointsText.text = "0";
+
+        playerAtTheEnd = false;
 
         luckyNumber = dice.RollDice();
         luckyNumberText.text = $"{luckyNumber}";
@@ -93,25 +101,35 @@ public class PlayerOne : MonoBehaviour
 
     public IEnumerator StartTurn()
     {
-        //Debug.Log("start");
-
-        movementPoints = dice.RollDice();
-        //Debug.Log($"roled {movementPoints}");
-
-        yield return StartCoroutine(dice.WaitForDiceToStop(2, movementPoints));
-        //Debug.Log("rolled");
-
-        if (movementPoints == luckyNumber)
+        if (!playerAtTheEnd) 
         {
-            luckyNumberParticles.Play();
-            lifeSatisfactionPoints += 2;
+            //Debug.Log("start");
+
+            movementPoints = dice.RollDice();
+            //Debug.Log($"roled {movementPoints}");
+
+            yield return StartCoroutine(dice.WaitForDiceToStop(2, movementPoints));
+            //Debug.Log("rolled");
+
+            if (movementPoints == luckyNumber)
+            {
+                luckyNumberParticles.Play();
+                lifeSatisfactionPoints += 2;
+            }
+
+            yield return StartCoroutine(HandleMovement());
+            //Debug.Log("moved");
+
+            rolledDice = true;
+            isReadyToEndTurn = true;
         }
-
-        yield return StartCoroutine(HandleMovement());
-        //Debug.Log("moved");
-
-        rolledDice = true;
-        isReadyToEndTurn = true;
+        else
+        {
+            isReadyToEndTurn = true;
+            AlertPanel.SetActive(true);
+            AlertPanelBorder.SetActive(true);
+        }
+        
         
     }
     public IEnumerator HandleMovement()
@@ -165,10 +183,59 @@ public class PlayerOne : MonoBehaviour
                 yield return StartCoroutine(ChanceTile());
                 break;
             case WaypointType.Matura:
+                if (movementPoints > 0 && !isReadyToEndTurn)
+                {
+                    isReadyToEndTurn = false;
+                    yield return StartCoroutine(MaturaTile());
+
+                }
                 break;
             case WaypointType.Victory:
+                playerAtTheEnd = true;
                 break;
         }
+    }
+    public double GetScore()
+    {
+        double score = 0;
+        if (knowledgePoints > lifeSatisfactionPoints)
+        {
+            
+            if (knowledgePoints < 0)
+            {
+                score = (knowledgePoints  * 1.25) + lifeSatisfactionPoints;
+            }
+            else
+            {
+                score = (knowledgePoints * 0.75) + lifeSatisfactionPoints;
+            }
+            
+            return score;
+        }else if(knowledgePoints < lifeSatisfactionPoints)
+        {
+            if (lifeSatisfactionPoints < 0)
+            {
+                score = (lifeSatisfactionPoints * 1.25) + knowledgePoints;
+            }
+            else
+            {
+                score = (lifeSatisfactionPoints * 0.75) + knowledgePoints;
+            }
+            return score;
+        }
+        else if (knowledgePoints == lifeSatisfactionPoints)
+        {
+            if(lifeSatisfactionPoints < 0)
+            {
+                score = (lifeSatisfactionPoints * 0.5) + (knowledgePoints * 0.5);
+            }
+            else
+            {
+                score = (lifeSatisfactionPoints * 1.5) + (knowledgePoints * 1.5);
+            }
+            return score;
+        }
+        return 0;
     }
     private IEnumerator NegativeTile()
     {
@@ -195,9 +262,9 @@ public class PlayerOne : MonoBehaviour
         }
 
     }
-    private IEnumerator StartCountdown(float countdownValue = 5)
+    private IEnumerator StartCountdown(float countdownValue)
     {
-        currCountdownValue = countdownValue;
+        currCountdownValue = countdownValue * path.gameStage;
         while (currCountdownValue > 0)
         {
             TimerText.text = currCountdownValue.ToString();
@@ -206,6 +273,34 @@ public class PlayerOne : MonoBehaviour
             TimerText.text = currCountdownValue.ToString();
         }
     }
+    private IEnumerator MaturaTile()
+    {
+        LeftChoise.text = path.waypoints[currentWaypoint].leftChoise;
+        RightChoise.text = path.waypoints[currentWaypoint].rightChoise;
+        Prompt.text = "Czy chcesz udaæ siê na studia? Bêdzie ciê to kosztowaæ po 5 punktów z ka¿dego rodzaju.";
+        ChoosePanelBorder.SetActive(true);
+        ChoosePanel.SetActive(true);
+
+        var waitForButton = new WaitForUIButtons(LeftChooseButton, RightChooseButton);
+        yield return waitForButton.Reset();
+        if (waitForButton.PressedButton == LeftChooseButton)
+        {
+            path = path.waypoints[currentWaypoint].paths[0];
+            currentWaypoint = 0;
+            yield return StartCoroutine(HandleMovement());
+            knowledgePoints -= 5;
+            lifeSatisfactionPoints -= 5;
+            //isReadyToEndTurn = true;
+        }
+        else
+        {
+            path = path.waypoints[currentWaypoint].paths[1];
+            currentWaypoint = 0;
+            yield return StartCoroutine(HandleMovement());
+            //isReadyToEndTurn = true;
+        }
+    }
+
     private IEnumerator RiskTile()
     {
         RiskEvent riskEvent = GameMaster.instance.GetRiskEvent(path.gameStage);
@@ -251,6 +346,7 @@ public class PlayerOne : MonoBehaviour
                     knowledgePoints -= riskEvent.value;
                 }
             }
+            currCountdownValue = 0;
         }
         else
         {
@@ -284,7 +380,7 @@ public class PlayerOne : MonoBehaviour
                     knowledgePoints -= riskEvent.value;
                 }
             }
-            
+            currCountdownValue = 0;
         }
         RiskPanelBorder.SetActive(false);
         RiskyPanel.SetActive(false);
@@ -389,6 +485,7 @@ public class PlayerOne : MonoBehaviour
         currentWaypoint += steps;
         if (currentWaypoint < path.waypoints.Length)
         {
+            Debug.Log($"Steps to move {steps}");
             Vector3 targetPosition = path.GetWaypointPosition(currentWaypoint);
             yield return StartCoroutine(MoveToPosition(targetPosition, (float)steps));
         }

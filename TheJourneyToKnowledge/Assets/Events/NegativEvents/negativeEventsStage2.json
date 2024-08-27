@@ -1,0 +1,74 @@
+{
+  "events": [
+    {
+      "text": "Nie udało ci się rozwiązać zadania domowego.",
+      "type": 0,
+      "value": -2
+    },
+    {
+      "text": "Ktoś śmiał się z twojego rysunku.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Zapomniałeś/Zapomniałaś zabrać ważną książkę do szkoły.",
+      "type": 0,
+      "value": -1
+    },
+    {
+      "text": "Zgubiłeś/Zgubiłaś piórnik na przerwie.",
+      "type": 1,
+      "value": -2
+    },
+    {
+      "text": "Dostałeś/Dostałaś złą ocenę za sprawdzian.",
+      "type": 0,
+      "value": -4
+    },
+    {
+      "text": "Pokłóciłeś/Pokłóciłaś się z najlepszym przyjacielem/przyjaciółką.",
+      "type": 1,
+      "value": -4
+    },
+    {
+      "text": "Przypadkowo zepsułeś/zepsułaś pracę plastyczną kolegi.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Nie udało ci się przeczytać zadanej lektury na czas.",
+      "type": 0,
+      "value": -6
+    },
+    {
+      "text": "Nie zostałeś/nie zostałaś wybrany/wybrana do drużyny sportowej.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Nauczyciel zwrócił ci uwagę za złe zachowanie na lekcji.",
+      "type": 1,
+      "value": -2
+    },
+    {
+      "text": "Przegrałeś/Przegrałaś ważny konkurs szkolny.",
+      "type": 1,
+      "value": -8
+    },
+    {
+      "text": "Złamałeś/Złamałaś kredkę podczas rysowania.",
+      "type": 1,
+      "value": -1
+    },
+    {
+      "text": "Nie rozumiałeś/Nie rozumiałaś tematu omawianego na lekcji.",
+      "type": 0,
+      "value": -2
+    },
+    {
+      "text": "Pominąłeś/Pominęłaś ważną część zadania i straciłeś/straciłaś punkty.",
+      "type": 0,
+      "value": -3
+    }
+  ]
+}

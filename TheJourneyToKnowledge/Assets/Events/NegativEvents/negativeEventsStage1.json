@@ -1,0 +1,79 @@
+{
+  "events": [
+    {
+      "text": "Nikt nie chce się z tobą bawić.",
+      "type": 1,
+      "value": -4
+    },
+    {
+      "text": "Masz duży problem z czytaniem.",
+      "type": 0,
+      "value": -2
+    },
+    {
+      "text": "Nabywasz wadę wymowy.",
+      "type": 0,
+      "value": -2
+    },
+    {
+      "text": "Przewrócono cię podczas gry w berka.",
+      "type": 1,
+      "value": -1
+    },
+    {
+      "text": "Twoja ulubiona zabawka zepsuła się.",
+      "type": 1,
+      "value": -2
+    },
+    {
+      "text": "Nowe doświadczenia cię przytłoczyły.",
+      "type": 0,
+      "value": -1
+    },
+    {
+      "text": "Zaczęłaś/Zacząłeś płakać przy wszystkich.",
+      "type": 1,
+      "value": -8
+    },
+    {
+      "text": "Nie udało ci się ułożyć puzzli.",
+      "type": 0,
+      "value": -2
+    },
+    {
+      "text": "Twoje ulubione ciastko spadło na podłogę.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Ktoś zabrał ci zabawkę.",
+      "type": 1,
+      "value": -2
+    },
+    {
+      "text": "Nie dostałaś/dostałeś pochwały za rysunek.",
+      "type": 1,
+      "value": -1
+    },
+    {
+      "text": "Zgubiłaś/zgubiłeś swoją ulubioną kredkę.",
+      "type": 0,
+      "value": -1
+    },
+    {
+      "text": "Nie udało ci się ułożyć wieży z klocków.",
+      "type": 0,
+      "value": -2
+    },
+    {
+      "text": "Podczas zabawy ubrudziłaś/ubrałeś ubranie.",
+      "type": 1,
+      "value": -1
+    },
+    {
+      "text": "Przyrządziłaś/przyrządziłeś niesmaczne danie z piasku.",
+      "type": 1,
+      "value": -1
+    }
+  ]
+}

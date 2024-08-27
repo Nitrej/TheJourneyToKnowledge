@@ -1,0 +1,165 @@
+{
+  "events": [
+    {
+      "text": "2 * 2 + 2 = ?",
+      "ansL": "8",
+      "ansR": "6",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Ile nóg ma pies?",
+      "ansL": "4",
+      "ansR": "2",
+      "correct": 0,
+      "value": 3
+    },
+    {
+      "text": "Co jest stolicą Polski?",
+      "ansL": "Warszawa",
+      "ansR": "Kraków",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Który z tych owoców nie jest czerwony?",
+      "ansL": "Jabłko",
+      "ansR": "Banan",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Czy woda zamarza w temperaturze 0°C?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 3
+    },
+    {
+      "text": "Jak nazywa się najdłuższa rzeka w Polsce?",
+      "ansL": "Wisła",
+      "ansR": "Odra",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Co jest stolicą Francji?",
+      "ansL": "Paryż",
+      "ansR": "Londyn",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Czy wszystkie ssaki są zwierzętami?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 3
+    },
+    {
+      "text": "Ile dni ma luty w roku przestępnym?",
+      "ansL": "28",
+      "ansR": "29",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Co jest głównym źródłem energii dla roślin?",
+      "ansL": "Woda",
+      "ansR": "Słońce",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Jak nazywa się największy ocean na Ziemi?",
+      "ansL": "Ocean Atlantycki",
+      "ansR": "Ocean Spokojny",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Czy Ziemia jest płaska?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Jaki jest najwyższy szczyt świata?",
+      "ansL": "Kilimandżaro",
+      "ansR": "Mount Everest",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy wszyscy ludzie mają serce?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 3
+    },
+    {
+      "text": "Jak nazywa się czwarta planeta od Słońca",
+      "ansL": "Mars",
+      "ansR": "Ziemia",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Czy wszystkie ptaki potrafią latać?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Ile miesięcy ma rok?",
+      "ansL": "10",
+      "ansR": "12",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Króre z tych pism jest starsze?",
+      "ansL": "Pismo klinowe",
+      "ansR": "Alfabet łaciński",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Jakie zwierzę jest symbolem Australii?",
+      "ansL": "Kangur",
+      "ansR": "Tygrys",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Ile kontynentów jest na Ziemi?",
+      "ansL": "5",
+      "ansR": "7",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Który z tych miesięcy jest dłuższy?",
+      "ansL": "Maj",
+      "ansR": "Wrzesień",
+      "correct": 0,
+      "value": 3
+    },
+    {
+      "text": "Jakie zwierzę jest znane z robienia miodu?",
+      "ansL": "Pszczoła",
+      "ansR": "Motyl",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Czy koty mogą pływać?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 3
+    }
+  ]
+}

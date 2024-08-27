@@ -1,0 +1,89 @@
+{
+  "events": [
+    {
+      "text": "Otrzymałeś/Otrzymałaś pochwałę od nauczyciela za dobrze wykonane zadanie.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Udało ci się rozwiązać trudne zadanie matematyczne.",
+      "type": 0,
+      "value": 4
+    },
+    {
+      "text": "Zwyciężyłeś/Zwyciężyłaś w szkolnym konkursie plastycznym.",
+      "type": 0,
+      "value": 8
+    },
+    {
+      "text": "Pomogłeś/Pomogłaś koledze zrozumieć zadanie domowe.",
+      "type": 0,
+      "value": 2
+    },
+    {
+      "text": "Zostałeś/Zostałaś wybrany/wybrana do szkolnej drużyny sportowej.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Otrzymałeś/Otrzymałaś najwyższą ocenę z testu z języka polskiego.",
+      "type": 0,
+      "value": 4
+    },
+    {
+      "text": "Zdobyłeś/Zdobyłaś nowe przyjaźnie w szkole.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Odkryłeś/Odkryłaś nowe hobby, które sprawia ci radość.",
+      "type": 1,
+      "value": 2
+    },
+    {
+      "text": "Twoja praca plastyczna została wybrana na szkolną wystawę.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Wygrałeś/Wygrałaś nagrodę za najlepszy projekt z przyrody.",
+      "type": 0,
+      "value": 4
+    },
+    {
+      "text": "Wziąłeś/Wzięłaś udział w szkolnym przedstawieniu i dobrze się bawiłeś/bawiłaś.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Udało ci się przeczytać całą książkę samodzielnie.",
+      "type": 0,
+      "value": 3
+    },
+    {
+      "text": "Dostałeś/Dostałaś specjalne wyróżnienie za wzorowe zachowanie.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Zostałeś/Zostałaś kapitanem drużyny na lekcji wychowania fizycznego.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Nauczyciel pochwalił twoją prezentację przed całą klasą.",
+      "type": 0,
+      "value": 3
+    },
+    {
+      "text": "Ukończyłeś/Ukończyłaś trudne zadanie domowe na czas.",
+      "type": 0,
+      "value": 2
+    },
+    {
+      "text": "Udało ci się pokonać nieśmiałość i wypowiedzieć na forum klasy.",
+      "type": 1,
+      "value": 3
+    }
+  ]
+}

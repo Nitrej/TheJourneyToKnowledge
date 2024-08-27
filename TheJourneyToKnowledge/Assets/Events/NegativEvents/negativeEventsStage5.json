@@ -1,0 +1,79 @@
+{
+  "events": [
+    {
+      "text": "Nie zdałeś/nie zdałaś ważnego egzaminu.",
+      "type": 0,
+      "value": -6
+    },
+    {
+      "text": "Nie udało ci się dotrzymać terminu oddania projektu.",
+      "type": 0,
+      "value": -4
+    },
+    {
+      "text": "Zostałeś/zostałaś krytykowany/krytykowana przez prowadzącego za błędy w pracy.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Miałeś/miałaś problem z efektywnym zarządzaniem czasem.",
+      "type": 0,
+      "value": -2
+    },
+    {
+      "text": "Dostałeś/dostałaś niską ocenę za prezentację grupową.",
+      "type": 0,
+      "value": -4
+    },
+    {
+      "text": "Zostałeś/zostałaś pominięty/pominięta w wyborze do ważnego projektu.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Czujesz się przytłoczony/przytłoczona dużą liczbą obowiązków.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "W relacjach z kolegami z grupy pojawiły się konflikty.",
+      "type": 1,
+      "value": -2
+    },
+    {
+      "text": "Nie udało ci się zdobyć stypendium, na które liczyłeś/liczyłaś.",
+      "type": 1,
+      "value": -4
+    },
+    {
+      "text": "Musiałeś/musiałaś opuścić ważne zajęcia z powodu choroby.",
+      "type": 0,
+      "value": -2
+    },
+    {
+      "text": "Nie zrozumiałeś/nie zrozumiałaś materiału z wykładu, co utrudnia naukę.",
+      "type": 0,
+      "value": -2
+    },
+    {
+      "text": "Zgubiłeś/zgubiłaś ważne notatki przed egzaminem.",
+      "type": 0,
+      "value": -3
+    },
+    {
+      "text": "Zostałeś/zostałaś oceniony/oceniona negatywnie w ocenie semestralnej.",
+      "type": 0,
+      "value": -8
+    },
+    {
+      "text": "Nie udało ci się znaleźć odpowiedniego miejsca na staż.",
+      "type": 1,
+      "value": -8
+    },
+    {
+      "text": "Czujesz się niedoceniony/niedoceniana w grupie projektowej.",
+      "type": 1,
+      "value": -3
+    }
+  ]
+}

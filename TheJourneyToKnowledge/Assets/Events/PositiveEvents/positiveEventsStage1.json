@@ -1,0 +1,69 @@
+{
+  "events": [
+    {
+      "text": "Nauczyłeś/Nauczyłaś się nowych piosenek w przedszkolu.",
+      "type": 0,
+      "value": 2
+    },
+    {
+      "text": "Zbudowałeś/Zbudowałaś wysoką wieżę z klocków.",
+      "type": 0,
+      "value": 3
+    },
+    {
+      "text": "Udało ci się samodzielnie ubrać.",
+      "type": 0,
+      "value": 3
+    },
+    {
+      "text": "Nauczyciel pochwalił cię za ładne rysowanie.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Zawiązałeś/Zawiązałaś samodzielnie buty po raz pierwszy.",
+      "type": 0,
+      "value": 2
+    },
+    {
+      "text": "Podzieliłeś/Podzieliłaś się zabawkami z innymi dziećmi.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Zjadłeś/Zjadłaś cały obiad bez marudzenia.",
+      "type": 1,
+      "value": 2
+    },
+    {
+      "text": "Zostałeś/Zostałaś wybrany/wybrana do prowadzenia grupy w zabawie.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Nauczyłeś/Nauczyłaś się nowego wierszyka na pamięć.",
+      "type": 0,
+      "value": 5
+    },
+    {
+      "text": "Dostałeś/Dostałaś naklejkę za dobre zachowanie.",
+      "type": 1,
+      "value": 2
+    },
+    {
+      "text": "Narysowałeś/Narysowałaś ładny obrazek i pokazałeś/pokazałaś go rodzicom.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Wygrałeś/Wygrałaś w grę planszową z rówieśnikami.",
+      "type": 0,
+      "value": 3
+    },
+    {
+      "text": "Samodzielnie ułożyłeś/ułożyłaś proste puzzle.",
+      "type": 0,
+      "value": 2
+    }
+  ]
+}

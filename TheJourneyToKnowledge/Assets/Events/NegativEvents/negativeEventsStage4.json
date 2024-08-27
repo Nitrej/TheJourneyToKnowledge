@@ -1,0 +1,89 @@
+{
+  "events": [
+    {
+      "text": "Nie udało ci się zdobyć wymarzonej pracy.",
+      "type": 1,
+      "value": -4
+    },
+    {
+      "text": "Zostałeś/Zostałaś krytykowany/krytykowana przez przełożonego za niedopatrzenie.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Miałeś/Miałaś problem z dotrzymywaniem terminów w pracy.",
+      "type": 0,
+      "value": -3
+    },
+    {
+      "text": "Nie udało ci się zrealizować ważnego projektu na czas.",
+      "type": 0,
+      "value": -4
+    },
+    {
+      "text": "Czujesz się przytłoczony/przytłoczona obowiązkami i odpowiedzialnością.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Nie uzyskałeś/uzyskałaś pozytywnej odpowiedzi na aplikację do wymarzonego kursu.",
+      "type": 1,
+      "value": -2
+    },
+    {
+      "text": "Zgubiłeś/Zgubiłaś ważne dokumenty związane z pracą.",
+      "type": 1,
+      "value": -5
+    },
+    {
+      "text": "Twoja pierwsza prezentacja w pracy nie poszła zgodnie z planem.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Miałeś/Miałaś trudności z adaptacją do nowego środowiska pracy.",
+      "type": 1,
+      "value": -4
+    },
+    {
+      "text": "Nie udało ci się nawiązać dobrego kontaktu z zespołem.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Otrzymałeś/Otrzymałaś negatywne feedbacki od klienta.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Zostałeś/Zostałaś pominięty/pominięta w awansie.",
+      "type": 1,
+      "value": -4
+    },
+    {
+      "text": "Twoje pierwsze samodzielne mieszkanie wymagało więcej pracy, niż się spodziewałeś/spodziewałaś.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "W relacjach osobistych pojawiły się problemy, które ciężko jest rozwiązać.",
+      "type": 1,
+      "value": -4
+    },
+    {
+      "text": "Z powodu problemów finansowych musiałeś/musiałaś zrezygnować z planów na wakacje.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Nie udało ci się znaleźć równowagi między pracą a życiem osobistym.",
+      "type": 1,
+      "value": -4
+    },
+    {
+      "text": "Miałeś/Miałaś trudności z utrzymaniem dobrego stanu zdrowia w nowym trybie życia.",
+      "type": 1,
+      "value": -3
+    }
+  ]
+}

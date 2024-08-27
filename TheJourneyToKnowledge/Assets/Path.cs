@@ -9,6 +9,8 @@ public class Path : MonoBehaviour
 
     public int gameStage;
 
+    public string stageName;
+
     public Vector3 GetWaypointPosition(int index)
     {
         if(index >= 0 && index < waypoints.Length)

@@ -1,0 +1,207 @@
+{
+  "events": [
+    {
+      "text": "Który z tych elementów jest pierwiastkiem chemicznym?",
+      "ansL": "Woda",
+      "ansR": "Węgiel",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Jaki jest najwyższy szczyt w Europie?",
+      "ansL": "Kilimandżaro",
+      "ansR": "Mont Blanc",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Która z poniższych książek została napisana przez George'a Orwella?",
+      "ansL": "1984",
+      "ansR": "Wielki Gatsby",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Jakie jest równanie Einsteina na zasadniczą zasadę relatywności?",
+      "ansL": "F=ma",
+      "ansR": "E=mc^2",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Który z tych wydarzeń miało miejsce wsześniej?",
+      "ansL": "Lądowanie na Księżycu",
+      "ansR": "Druga wojna światowa",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Które zwierze jest zazwyczaj cięższe?",
+      "ansL": "Słoń",
+      "ansR": "Nosorożec",
+      "correct": 0,
+      "value": 3
+    },
+    {
+      "text": "Kto jest autorem teorii ewolucji?",
+      "ansL": "Isaac Newton",
+      "ansR": "Charles Darwin",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Jaki jest największy ocean na Ziemi?",
+      "ansL": "Ocean Atlantycki",
+      "ansR": "Ocean Spokojny",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Które z poniższych miast jest stolicą Japonii?",
+      "ansL": "Seul",
+      "ansR": "Tokio",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Która z poniższych formuł jest równaniem kwadratowym?",
+      "ansL": "ax^2 + bx + c = 0",
+      "ansR": "ax + b = 0",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Czy Europa jest największym kontynentem na Ziemi?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Kto napisał 'Hamleta'?",
+      "ansL": "William Shakespeare",
+      "ansR": "J.K. Rowling",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Która z poniższych rzek jest dłuższa?",
+      "ansL": "Amazonka",
+      "ansR": "Nil",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Które z poniższych zwierząt jest ssakiem?",
+      "ansL": "Rekin",
+      "ansR": "Delfin",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Który pierwiastek chemiczny jest cięższy?",
+      "ansL": "Uran",
+      "ansR": "Ołów",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Które z poniższych pojęć jest związane z matematyką?",
+      "ansL": "Funkcja",
+      "ansR": "Obiekt",
+      "correct": 0,
+      "value": 3
+    },
+    {
+      "text": "Czy wszystkie chmury są białe?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Co to jest fotosynteza?",
+      "ansL": "Proces oddychania roślin",
+      "ansR": "Proces produkcji pokarmu przez rośliny",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Który kraj jest większy pod względem powierzchni?",
+      "ansL": "Rosja",
+      "ansR": "Kanada",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Kto był pierwszym człowiekiem na Księżycu?",
+      "ansL": "Neil Armstrong",
+      "ansR": "Louis Armstrong",
+      "correct": 0,
+      "value": 5
+    },
+    {
+      "text": "Jakie są podstawowe kolory?",
+      "ansL": "Czerwony, zielony, niebieski",
+      "ansR": "Czerwony, żółty, niebieski",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Jaki jest symbol chemiczny dla żelaza?",
+      "ansL": "Fe",
+      "ansR": "Ir",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Co to jest prawo Ohma?",
+      "ansL": "Zależność między napięciem, prądem i oporem",
+      "ansR": "Zasada zachowania energii",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Jak nazywa się najbardziej znane dzieło Leonarda da Vinci?",
+      "ansL": "Ostatnia Wieczerza",
+      "ansR": "Mona Lisa",
+      "correct": 1,
+      "value": 4
+    },
+    {
+      "text": "Czy Ziemia jest perfekcyjną kulą?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Kto jest autorem teorii względności?",
+      "ansL": "Albert Einstein",
+      "ansR": "Isaac Newton",
+      "correct": 0,
+      "value": 5
+    },
+    {
+      "text": "Która cywilizacja jest starsza?",
+      "ansL": "Sumerowie",
+      "ansR": "Egipcjanie",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Jakie jest najczęściej używane słowo w języku angielskim?",
+      "ansL": "Is",
+      "ansR": "The",
+      "correct": 1,
+      "value": 3
+    },
+    {
+      "text": "Które jezioro jest większe?",
+      "ansL": "Jezioro Wiktorii",
+      "ansR": "Jezioro Bajkał",
+      "correct": 1,
+      "value": 4
+    }
+  ]
+}

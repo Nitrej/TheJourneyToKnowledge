@@ -1,0 +1,64 @@
+{
+  "events": [
+    {
+      "text": "Otrzymałeś/Otrzymałaś pozytywne opinie od pierwszego przełożonego.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Zostałeś/Zostałaś wyróżniony/wyróżniona za szybkie przystosowanie się do nowych obowiązków.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Znalazłeś/Znalazłaś świetny balans między pracą a życiem osobistym w nowej pracy.",
+      "type": 1,
+      "value": 6
+    },
+    {
+      "text": "Udało ci się zdobyć pierwsze pozytywne referencje od klienta.",
+      "type": 1,
+      "value": 5
+    },
+    {
+      "text": "Zrealizowałeś/Zrealizowałaś samodzielnie ważne zadanie w pierwszej pracy.",
+      "type": 0,
+      "value": 4
+    },
+    {
+      "text": "Otrzymałeś/Otrzymałaś pozytywne feedbacki za swoją pierwszą prezentację.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Zostałeś/Zostałaś zauważony/zauważona za swoje umiejętności organizacyjne w nowej pracy.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Otrzymałeś/Otrzymałaś pochwałę za inicjatywę w nowym projekcie.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Twoje pomysły zostały docenione podczas pierwszego spotkania zespołu.",
+      "type": 1,
+      "value": 5
+    },
+    {
+      "text": "Udało ci się szybko nauczyć nowych umiejętności potrzebnych w pracy.",
+      "type": 0,
+      "value": 3
+    },
+    {
+      "text": "Zbudowałeś/Zbudowałaś dobre relacje z kolegami z pracy w krótkim czasie.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Otrzymałeś/Otrzymałaś pozytywną ocenę za efektywność i zaangażowanie w pierwszym miesiącu pracy.",
+      "type": 1,
+      "value": 4
+    }
+  ]
+}

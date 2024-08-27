@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -25,6 +26,8 @@ public class GameMaster : MonoBehaviour
     private PlayerOne playerOne;
     private PlayerOne playerTwo;
 
+    private Players? firstPlayerToEnd;
+
     public GameObject playerOneStartTurn;
     public GameObject playerTwoStartTurn;
 
@@ -35,6 +38,19 @@ public class GameMaster : MonoBehaviour
 
     private TextMeshProUGUI playerOneTurnText;
     private TextMeshProUGUI playerTwoTurnText;
+
+    public LevelLoader levelLoader;
+
+    public GameObject ChoosePanel;
+    public GameObject ChoosePanelBorder;
+    public UnityEngine.UI.Button LeftChooseButton;
+    public UnityEngine.UI.Button RightChooseButton;
+    public TextMeshProUGUI Prompt;
+    public TextMeshProUGUI LeftChoise;
+    public TextMeshProUGUI RightChoise;
+
+
+    public TextMeshProUGUI currentStage;
 
     public float fadeTime;
     private float currentfadeTime;
@@ -57,9 +73,13 @@ public class GameMaster : MonoBehaviour
         playerOne = playerOneObject.GetComponent<PlayerOne>();
         playerTwo = playerTwoObject.GetComponent<PlayerOne>();
 
+        firstPlayerToEnd = null;
+
         FocusCameraOnCurrentPlayer(playerOneObject);
         ShowTurnStartText();
         //StartCoroutine(playerOne.StartTurn());
+
+        Resources.UnloadUnusedAssets();
     }
 
     void Update()
@@ -67,12 +87,60 @@ public class GameMaster : MonoBehaviour
         if(currentPlayerTurn == Players.PlayerOne)
         {
             FocusCameraOnCurrentPlayer(playerOneObject);
+            currentStage.color = Color.blue;
+            currentStage.text = playerOne.path.stageName;
         }
         else
         {
             FocusCameraOnCurrentPlayer(playerTwoObject);
+            currentStage.color = Color.red;
+            currentStage.text = playerTwo.path.stageName;
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(EscapePressed());
+        }
+
+        if(playerOne.playerAtTheEnd && playerTwo.playerAtTheEnd)
+        {
+            playerOne.isReadyToEndTurn = false;
+            playerTwo.isReadyToEndTurn = false;
+            double playerOneScore = playerOne.GetScore();
+            double playerTwoScore = playerTwo.GetScore();
+            if (firstPlayerToEnd == Players.PlayerOne)
+            {
+                playerOneScore += 10;
+            }
+            else
+            {
+                playerTwoScore += 10;
+            }
+
+            if (playerOneScore > playerTwoScore)
+            {
+                StartCoroutine(EndGame(1,2,playerOneScore,playerTwoScore,false));
+            }
+            else if (playerTwoScore > playerOneScore)
+            {
+                StartCoroutine(EndGame(2, 1, playerTwoScore, playerOneScore, false));
+            }
+            else
+            {
+                StartCoroutine(EndGame(1, 2, playerOneScore, playerOneScore, true));
+            }
+
+        }
+
+        if(playerOne.playerAtTheEnd && firstPlayerToEnd == null)
+        {
+            firstPlayerToEnd = Players.PlayerOne;
+        }
+
+        if (playerTwo.playerAtTheEnd && firstPlayerToEnd == null)
+        {
+            firstPlayerToEnd = Players.PlayerTwo;
+        }
     }
 
     public bool RequestToEndTurn()
@@ -95,6 +163,10 @@ public class GameMaster : MonoBehaviour
             playerTwo.rolledDice = false;
             playerOne.isReadyToEndTurn = false;
             playerTwo.isReadyToEndTurn = false;
+            playerOne.AlertPanel.SetActive(false);
+            playerOne.AlertPanelBorder.SetActive(false);
+            playerTwo.AlertPanel.SetActive(false);
+            playerTwo.AlertPanelBorder.SetActive(false);
             PlayerOneDiceAnimator.ResetTrigger("Idle");
             PlayerOneDiceAnimator.SetTrigger("Idle");
             //playerOne.dice.ReturnToIdle();
@@ -110,6 +182,10 @@ public class GameMaster : MonoBehaviour
             playerTwo.rolledDice = true;
             playerOne.isReadyToEndTurn = false;
             playerTwo.isReadyToEndTurn = false;
+            playerOne.AlertPanel.SetActive(false);
+            playerOne.AlertPanelBorder.SetActive(false);
+            playerTwo.AlertPanel.SetActive(false);
+            playerTwo.AlertPanelBorder.SetActive(false);
             PlayerTwoDiceAnimator.ResetTrigger("Idle");
             PlayerTwoDiceAnimator.SetTrigger("Idle");
             //playerTwo.dice.ReturnToIdle();
@@ -175,9 +251,9 @@ public class GameMaster : MonoBehaviour
     {
         int fate = Random.Range(1,11);
 
-        if(fate == 10)
+        if (fate == 10)
         {
-            GetNegativeEvent(stage);
+            return GetNegativeEvent(stage);
         }
         else
         {
@@ -185,14 +261,66 @@ public class GameMaster : MonoBehaviour
 
             return negativeEvents.events[Random.Range(0, negativeEvents.events.Count)];
         }
-
-        return null;
     }
 
     public RiskEvent GetRiskEvent(int stage)
     {
+
+
         RiskEvents riskEvents = JsonUtility.FromJson<RiskEvents>(riskJsons[stage].text);
 
         return riskEvents.events[Random.Range(0, riskEvents.events.Count)];
+    }
+
+    private IEnumerator EndGame(int playerWonNumber, int playerLostNumber, double playerWonPoints, double playerLostPoints, bool draw)
+    {
+        LeftChoise.text = "Tak";
+        RightChoise.text = "Nie";
+        if (draw)
+        {
+            Prompt.text = $"Remis! Wszyscy gracze posiadaj¹ {playerWonPoints} punktów. Czy rozpocz¹æ now¹ grê?";
+        }
+        else 
+        {
+            Prompt.text = $"Gratulacje! Gracz {playerWonNumber} wygrywa z {playerWonPoints} punktami. Gracz {playerLostNumber} posiada {playerLostPoints} punktów. Czy rozpocz¹æ now¹ grê?";
+        }
+
+        ChoosePanelBorder.SetActive(true);
+        ChoosePanel.SetActive(true);
+
+        var waitForButton = new WaitForUIButtons(LeftChooseButton, RightChooseButton);
+        yield return waitForButton.Reset();
+        if (waitForButton.PressedButton == LeftChooseButton)
+        {
+            levelLoader.LoadLevelAsync(1);
+        }
+        else
+        {
+            levelLoader.LoadLevelAsync(0);
+        }
+
+    }
+
+    private IEnumerator EscapePressed()
+    {
+        LeftChoise.text = "Tak";
+        RightChoise.text = "Nie";
+        Prompt.text = "Czy na pewno chcesz wyjœæ do menu?";
+        
+        ChoosePanelBorder.SetActive(true);
+        ChoosePanel.SetActive(true);
+
+        var waitForButton = new WaitForUIButtons(LeftChooseButton, RightChooseButton);
+        yield return waitForButton.Reset();
+        if (waitForButton.PressedButton == LeftChooseButton)
+        {
+            levelLoader.LoadLevelAsync(0);
+        }
+        else
+        {
+            ChoosePanelBorder.SetActive(false);
+            ChoosePanel.SetActive(false);
+        }
+
     }
 }

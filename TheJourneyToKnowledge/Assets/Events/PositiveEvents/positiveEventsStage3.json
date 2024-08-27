@@ -1,0 +1,79 @@
+{
+  "events": [
+    {
+      "text": "Otrzymałeś/Otrzymałaś wysoką ocenę za ważny projekt.",
+      "type": 0,
+      "value": 6
+    },
+    {
+      "text": "Zostałeś/Zostałaś wyróżniony/wyróżniona za aktywność na zajęciach.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Udało ci się znaleźć doskonały balans między nauką a życiem osobistym.",
+      "type": 1,
+      "value": 8
+    },
+    {
+      "text": "Zostałeś/Zostałaś wybrany/wybrana do reprezentowania szkoły w konkursie.",
+      "type": 1,
+      "value": 5
+    },
+    {
+      "text": "Udało ci się rozwiązać trudne zadanie z matematyki samodzielnie.",
+      "type": 0,
+      "value": 4
+    },
+    {
+      "text": "Twoja prezentacja na lekcji została pochwalona przez nauczyciela.",
+      "type": 0,
+      "value": 5
+    },
+    {
+      "text": "Otrzymałeś/Otrzymałaś pozytywne opinie od nauczyciela dotyczące swojej pracy.",
+      "type": 0,
+      "value": 2
+    },
+    {
+      "text": "Znalazłeś/Znalazłaś nowe hobby, które sprawia ci radość.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Zdobyłeś/Zdobyłaś pierwsze miejsce w szkolnym turnieju sportowym.",
+      "type": 1,
+      "value": 5
+    },
+    {
+      "text": "Otrzymałeś/Otrzymałaś uznanie za świetną współpracę w projekcie grupowym.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Zostałeś/Zostałaś pochwalony/pochwalona za pomoc kolegom w nauce.",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "text": "Otrzymałeś/Otrzymałaś stypendium naukowe za dobre wyniki.",
+      "type": 0,
+      "value": 8
+    },
+    {
+      "text": "Twoje umiejętności artystyczne zostały docenione podczas wystawy szkolnej.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Zrealizowałeś/Zrealizowałaś własny projekt badawczy z sukcesem.",
+      "type": 0,
+      "value": 10
+    },
+    {
+      "text": "Twoje pomysły zostały docenione podczas szkolnych zawodów innowacyjnych.",
+      "type": 0,
+      "value": 5
+    }
+  ]
+}

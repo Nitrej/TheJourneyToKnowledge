@@ -1,0 +1,54 @@
+{
+  "events": [
+    {
+      "text": "Otrzymałeś/Otrzymałaś najwyższą ocenę na ważnym egzaminie.",
+      "type": 0,
+      "value": 5
+    },
+    {
+      "text": "Zostałeś/Zostałaś pochwalony/pochwalona za doskonałe przygotowanie do zajęć.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Znalazłeś/Znalazłaś świetne miejsce na letnią praktykę zawodową.",
+      "type": 1,
+      "value": 5
+    },
+    {
+      "text": "Twoja praca badawcza została opublikowana w akademickim czasopiśmie.",
+      "type": 0,
+      "value": 12
+    },
+    {
+      "text": "Otrzymałeś/Otrzymałaś stypendium za wybitne osiągnięcia naukowe.",
+      "type": 1,
+      "value": 5
+    },
+    {
+      "text": "Twoje wystąpienie na konferencji studenckiej zostało wysoko ocenione.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Zostałeś/Zostałaś wybrany/wybrana do pełnienia funkcji w organizacji studenckiej.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Otrzymałeś/Otrzymałaś pozytywne opinie od mentorów w programie rozwoju kariery.",
+      "type": 1,
+      "value": 4
+    },
+    {
+      "text": "Udało ci się zrealizować ważny projekt grupowy z sukcesem.",
+      "type": 0,
+      "value": 4
+    },
+    {
+      "text": "Twoja praca dyplomowa została uznana za najlepszą w roku.",
+      "type": 0,
+      "value": 10
+    }
+  ]
+}

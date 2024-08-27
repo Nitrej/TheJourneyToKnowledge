@@ -1,0 +1,256 @@
+{
+  "events": [
+    {
+      "text": "Czy wszystkie liczby pierwsze są nieparzyste?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy teoria względności Einsteina zakłada istnienie absolutnego czasu?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy cząsteczki DNA są jedynymi, które mogą kodować informacje genetyczne?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy wszystkie reakcje chemiczne są odwracalne?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy podstawowe zasady termodynamiki są uzależnione od skali czasowej?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy w modelu atomowym Bohra, elektron porusza się po eliptycznych orbitach?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy w ekonomii, model równowagi rynkowej zakłada doskonałą konkurencję?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 5
+    },
+    {
+      "text": "Czy całkowita ilość energii w zamkniętym układzie jest zmienna?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy prawo powszechnego ciążenia Newtona jest zgodne z teorią względności?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy kwantowy mechanizm nie jest oparty na zasadzie nieoznaczoności Heisenberga?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy teoria ewolucji jest szeroko akceptowana w środowisku naukowym?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 5
+    },
+    {
+      "text": "Czy wszystkie macierze mają wyznacznik różny od zera?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy funkcja trygonometryczna sinus jest funkcją okresową?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 4
+    },
+    {
+      "text": "Czy liczba pi jest liczbą całkowitą?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy w literaturze istnieją dzieła, które były tłumaczone na wszystkie języki świata?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy w chemii, zasada Le Chateliera dotyczy zmian w ciśnieniu?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 5
+    },
+    {
+      "text": "Czy prawa Newtona są stosowane tylko w mechanice klasycznej?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy w matematyce, całka nieoznaczona zawsze ma nieograniczoną liczbę rozwiązań?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 6
+    },
+    {
+      "text": "Czy w ekonomii, krzywa podaży jest zawsze rosnąca?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy wszystkie rodzaje materii w kosmosie są znane i sklasyfikowane?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy każda funkcja w matematyce ma odwrotność?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy w biologii, każda komórka zawiera jądro?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy wszystkie procesy chemiczne są endotermiczne?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy prawo zachowania masy dotyczy tylko chemii klasycznej?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy każda przestrzeń wektorowa w matematyce ma nieskończoną liczbę wymiarów?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy w teorii względności czas jest absolutny?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy każda kometa w naszym Układzie Słonecznym ma taki sam okres obiegu wokół Słońca?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy materia ciemna jest dobrze zrozumiana i sklasyfikowana przez naukowców?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy wszystkie układy dynamiczne są opisane przez równania różniczkowe?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy wszystkie prędkości w fizyce są względne?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy każda funkcja w analizie matematycznej jest ciągła?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy każda reakcja chemiczna jest rozkładem związków chemicznych na prostsze substancje?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy każda teoria naukowa ma swoje praktyczne zastosowanie?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy każda funkcja w analizie matematycznej ma swojego odwrotność?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 5
+    },
+    {
+      "text": "Czy każda teoria ekonomiczna jest absolutnie poprawna we wszystkich warunkach?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 1,
+      "value": 6
+    },
+    {
+      "text": "Czy w biologii, wszystkie organizmy są zbudowane z komórek?",
+      "ansL": "Tak",
+      "ansR": "Nie",
+      "correct": 0,
+      "value": 5
+    }
+  ]
+}

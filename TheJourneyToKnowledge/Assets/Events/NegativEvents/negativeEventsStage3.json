@@ -1,0 +1,74 @@
+{
+  "events": [
+    {
+      "text": "Nie zdałeś/Nie zdałaś ważnego sprawdzianu.",
+      "type": 0,
+      "value": -6
+    },
+    {
+      "text": "Pokłóciłeś/Pokłóciłaś się z bliskim przyjacielem.",
+      "type": 1,
+      "value": -5
+    },
+    {
+      "text": "Zostałeś/Zostałaś publicznie skrytykowany/skrytykowana przez nauczyciela.",
+      "type": 1,
+      "value": -4
+    },
+    {
+      "text": "Zawiodłeś/Zawiodłaś na zajęciach pozalekcyjnych.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Zostałeś/Zostałaś ukarany/ukarana za spóźnienie na lekcję.",
+      "type": 1,
+      "value": -2
+    },
+    {
+      "text": "Nie przygotowałeś/Nie przygotowałaś się na ważną prezentację.",
+      "type": 0,
+      "value": -3
+    },
+    {
+      "text": "Dostałeś/Dostałaś niską ocenę za projekt grupowy.",
+      "type": 0,
+      "value": -3
+    },
+    {
+      "text": "Zgubiłeś/Zgubiłaś ważne notatki przed egzaminem.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Zostałeś/Zostałaś pominięty/pominięta w wyborze na lidera grupy.",
+      "type": 1,
+      "value": -2
+    },
+    {
+      "text": "Zostałeś/Zostałaś odrzucony/odrzucona w rekrutacji do szkolnej drużyny sportowej.",
+      "type": 1,
+      "value": -3
+    },
+    {
+      "text": "Nie udało ci się osiągnąć celu w ważnym projekcie.",
+      "type": 0,
+      "value": -5
+    },
+    {
+      "text": "Nie mogłeś/mogłaś wziąć udziału w ważnym wydarzeniu szkolnym.",
+      "type": 1,
+      "value": -2
+    },
+    {
+      "text": "Dostałeś/Dostałaś niską ocenę z pracy domowej.",
+      "type": 0,
+      "value": -2
+    },
+    {
+      "text": "Czujesz się niedoceniany/niedoceniana przez nauczycieli.",
+      "type": 1,
+      "value": -3
+    }
+  ]
+}
