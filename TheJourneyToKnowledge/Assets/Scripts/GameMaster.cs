@@ -82,7 +82,7 @@ public class GameMaster : MonoBehaviour
         ShowTurnStartText();
         //StartCoroutine(playerOne.StartTurn());
 
-        StartCoroutine(PlayMusic(audio1));
+        StartCoroutine(PlayMusic(audio1,1));
 
         Resources.UnloadUnusedAssets();
     }
@@ -159,11 +159,11 @@ public class GameMaster : MonoBehaviour
             firstPlayerToEnd = Players.PlayerTwo;
         }
     }
-    private IEnumerator PlayMusic(AudioSource audioSource)
+    private IEnumerator PlayMusic(AudioSource audioSource, int num)
     {
         audioSource.Play();
         yield return new WaitForSeconds(audioSource.clip.length);
-        yield return StartCoroutine(PlayMusic(audioSource == audio1 ? audio2 : audio1));
+        yield return StartCoroutine(PlayMusic(num == 1 ? audio2 : audio1, num == 1 ? 2 : 1));
     }
     public bool RequestToEndTurn()
     {
@@ -189,7 +189,6 @@ public class GameMaster : MonoBehaviour
             playerOne.AlertPanelBorder.SetActive(false);
             if (playerTwo.playerAtTheEnd)
             {
-                Debug.Log("bbb");
                 playerTwo.AlertPanel.SetActive(true);
                 playerTwo.AlertPanelBorder.SetActive(true);
             }
@@ -210,7 +209,6 @@ public class GameMaster : MonoBehaviour
             playerTwo.isReadyToEndTurn = false;
             if (playerOne.playerAtTheEnd)
             {
-                Debug.Log("aaa");
                 playerOne.AlertPanel.SetActive(true);
                 playerOne.AlertPanelBorder.SetActive(true);
             }

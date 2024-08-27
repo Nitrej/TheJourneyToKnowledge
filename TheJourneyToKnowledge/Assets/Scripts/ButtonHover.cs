@@ -10,6 +10,7 @@ public class ExitButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     public TMP_ColorGradient TMP_ColorGradient;
     TMP_Text TMP_Text;
+    public Image Image;
 
 
     // Start is called before the first frame update
@@ -33,6 +34,7 @@ public class ExitButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         if (TMP_Text != null)
         {
             TMP_Text.colorGradientPreset = TMP_ColorGradient;
+            Image.color = new Color(Image.color.r,Image.color.g,Image.color.b, 0.5f);
         }
     }
 
@@ -41,7 +43,7 @@ public class ExitButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         if (TMP_Text != null)
         {
             TMP_Text.colorGradientPreset = null;
-
+            Image.color = new Color(Image.color.r, Image.color.g, Image.color.b, 0f);
         }
     }
 }

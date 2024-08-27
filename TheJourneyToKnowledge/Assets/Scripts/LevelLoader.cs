@@ -34,10 +34,10 @@ public class LevelLoader : MonoBehaviour
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelIndex);
 
-        //while (!asyncLoad.isDone)
-        //{
-        //    yield return null;
-        //}
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 
 }
