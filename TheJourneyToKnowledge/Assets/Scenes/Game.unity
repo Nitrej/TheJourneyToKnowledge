@@ -7920,7 +7920,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6110a2ad8f8be234e91f8ff2e42fff59, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -18021,7 +18021,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cf1dbe1c7d3461840b2fa0023f1f4b92, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -31016,7 +31016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1240292810}
   m_Layer: 0
-  m_Name: Decorum
+  m_Name: Decorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35901,7 +35901,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1686021177304871604, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
       propertyPath: m_Name
-      value: Ground_01
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 1686021177304871604, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
       propertyPath: m_IsActive
@@ -45238,7 +45238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556553820026523702, guid: ace5f9873b315e74d9e2a61656d8a305, type: 3}
       propertyPath: prompt
-      value: "Wybierz \u015Acie\u017Ck\u0119"
+      value: "Wybierz \u015Bcie\u017Ck\u0119"
       objectReference: {fileID: 0}
     - target: {fileID: 7556553820026523702, guid: ace5f9873b315e74d9e2a61656d8a305, type: 3}
       propertyPath: leftChoise
@@ -45266,7 +45266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9217468868171136752, guid: ace5f9873b315e74d9e2a61656d8a305, type: 3}
       propertyPath: prompt
-      value: "Wybierz \u015Acie\u017Ck\u0119"
+      value: "Wybierz scie\u017Ck\u0119"
       objectReference: {fileID: 0}
     - target: {fileID: 9217468868171136752, guid: ace5f9873b315e74d9e2a61656d8a305, type: 3}
       propertyPath: leftChoise
